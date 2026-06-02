@@ -33,5 +33,5 @@ export EDITOR=neovim;
 
 # Logo display, does not display in a tty session
 if [ -n "$DISPLAY" ]; then
-	fastfetch --logo ~/Pictures/archlinux-logo-dark-1000px.png --config ~/.config/fastfetch/blank.jsonc
+	fastfetch --logo ~/.config/bash/archlinux-logo-dark-1000px.png --config ~/.config/fastfetch/blank.jsonc
 fi
