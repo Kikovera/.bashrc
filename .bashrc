@@ -11,11 +11,26 @@ NC='\033[0m'
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+# Standard aliases
 alias grep='grep --color=auto'
 alias begin='reset; source ~/.bashrc'
 alias neovim='nvim'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+# Two letter aliases
+alias ls='ls --color=auto'
+alias gr='grep --color=auto'
+alias nv='nvim'
+alias ug='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias up='echo -e && fastfetch --config ~/.config/fastfetch/small.jsonc && echo -e "${CYAN} $(pacman -V)" && echo -e $NC && sudo pacman -Syu && echo && echo -e "${CYAN} $(paru -V)" && echo -e $NC && paru -Syu && echo && echo -e "${CYAN} $(flatpak --version)" && echo -e $NC && flatpak upgrade && echo'
+alias ff='fastfetch'
+alias ly='lynx'
+alias ex='exit'
+alias sd='shutdown now'
+alias rb='reboot'
+alias bg='reset; source ~/.bashrc'
+alias cl='clear'
+alias rs='reset'
 
 # Full system upgrade script
 alias upgrade='echo -e && fastfetch --config ~/.config/fastfetch/small.jsonc && echo -e "${CYAN} $(pacman -V)" && echo -e $NC && sudo pacman -Syu && echo && echo -e "${CYAN} $(paru -V)" && echo -e $NC && paru -Syu && echo && echo -e "${CYAN} $(flatpak --version)" && echo -e $NC && flatpak upgrade && echo'
@@ -33,5 +48,5 @@ export EDITOR=neovim;
 
 # Logo display, does not display in a tty session
 if [ -n "$DISPLAY" ]; then
-	fastfetch --logo ~/Pictures/archlinux-logo-dark-1000px.png --config ~/.config/fastfetch/blank.jsonc
+	fastfetch --logo ~/.config/bash/archlinux-logo-dark-1000px.png --config ~/.config/fastfetch/blank.jsonc
 fi
